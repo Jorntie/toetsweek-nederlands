@@ -1,0 +1,294 @@
+/* Eigen stijl van dit vak (bovenop core.css). Alle kleuren via variabelen of color-mix met --card, zodat licht en donker kloppen. */
+:root {
+  --nl-v0: #2f7de1; --nl-v1: #d6453d; --nl-v2: #e08a00; --nl-v3: #8a5cd6; --nl-v4: #1f9a6e; --nl-v5: #c2569b;
+  --nl-v6: #0f9bb0; --nl-v7: #5c7a1f; --nl-v8: #8c6a3c; --nl-v9: #4b5bd6; --nl-v10: #6f7682;
+  --nl-kans: #1f8a5b; --nl-bedr: #c2413a; --nl-nuance: #c96a12;
+  --nl-mix: 22%;
+  --nl-lK: var(--nl-v0); --nl-lU: var(--nl-v4); --nl-lV: var(--nl-v2); --nl-lA: var(--nl-v3);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --nl-v0: #6fa8ff; --nl-v1: #ff8a80; --nl-v2: #ffb547; --nl-v3: #b892ff; --nl-v4: #4cd19b; --nl-v5: #f08ccc;
+    --nl-v6: #4fd3e6; --nl-v7: #a8cc5a; --nl-v8: #d0a56e; --nl-v9: #8f9cff; --nl-v10: #aab1bd;
+    --nl-kans: #4cc38a; --nl-bedr: #f0827b; --nl-nuance: #f0a45a;
+    --nl-mix: 30%;
+  }
+}
+
+/* ---------- algemeen ---------- */
+.tw-w span.nok, .tw-w b.nok { color: var(--bad); font-weight: 700; }
+.nl-ok { color: var(--good); font-weight: 700; }
+.nl-prima { color: var(--good); margin: 6px 0; }
+.nl-titel { margin: 16px 0 4px; font-size: 1.05rem; }
+.nl-kop { display: flex; justify-content: space-between; gap: 8px; font-size: 14px; color: var(--muted); }
+.nl-lijf, .nl-item, .nl-na, .nl-stap2, .nl-vr2, .nl-sigstap { margin-top: 8px; }
+.nl-grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 8px 0; }
+.nl-grid2 .btn { min-height: 44px; font-size: 14px; padding: 8px; }
+.nl-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+.nl-lijst { margin: 6px 0 10px; padding-left: 20px; }
+.nl-lijst li { margin: 4px 0; }
+.nl-veld { display: block; margin: 12px 0; }
+.nl-veld > span { display: block; font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+.nl-veld select, .nl-veld textarea, .nl-veld input[type=text] { width: 100%; }
+.tw-w textarea { width: 100%; font: inherit; }
+.nl-punt { padding: 4px 0; font-size: 15px; color: var(--muted); }
+.nl-punt.ok { color: var(--good); }
+.nl-punt.let { color: var(--bad); }
+.nl-starters { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0; }
+.nl-starters .chip { font-size: 14px; min-height: 40px; }
+.nl-voorstellen { display: flex; flex-direction: column; gap: 6px; margin: 6px 0 12px; }
+.nl-voorstellen .chip { min-height: 44px; }
+.nl-quote { margin: 8px 0 12px; padding: 12px 14px; border-left: 4px solid var(--accent); background: var(--accent-soft); border-radius: 0 12px 12px 0; font-size: 16px; line-height: 1.55; }
+
+/* ---------- signaalwoorden en verbanden ---------- */
+.nl-v { display: inline-block; font-size: 13px; padding: 4px 9px; border-radius: 99px; background: color-mix(in srgb, var(--nl-v10) var(--nl-mix), var(--card)); color: var(--text); border: 1px solid transparent; }
+.nl-v.nl-leeg { background: none; border: 1px dashed var(--muted); color: var(--muted); }
+mark.nl-sig { background: color-mix(in srgb, var(--geel) 70%, var(--card)); color: inherit; border-radius: 4px; padding: 0 2px; }
+.nl-v0 { background: color-mix(in srgb, var(--nl-v0) var(--nl-mix), var(--card)); }
+.nl-v1 { background: color-mix(in srgb, var(--nl-v1) var(--nl-mix), var(--card)); }
+.nl-v2 { background: color-mix(in srgb, var(--nl-v2) var(--nl-mix), var(--card)); }
+.nl-v3 { background: color-mix(in srgb, var(--nl-v3) var(--nl-mix), var(--card)); }
+.nl-v4 { background: color-mix(in srgb, var(--nl-v4) var(--nl-mix), var(--card)); }
+.nl-v5 { background: color-mix(in srgb, var(--nl-v5) var(--nl-mix), var(--card)); }
+.nl-v6 { background: color-mix(in srgb, var(--nl-v6) var(--nl-mix), var(--card)); }
+.nl-v7 { background: color-mix(in srgb, var(--nl-v7) var(--nl-mix), var(--card)); }
+.nl-v8 { background: color-mix(in srgb, var(--nl-v8) var(--nl-mix), var(--card)); }
+.nl-v9 { background: color-mix(in srgb, var(--nl-v9) var(--nl-mix), var(--card)); }
+.nl-v10 { background: color-mix(in srgb, var(--nl-v10) var(--nl-mix), var(--card)); }
+mark.nl-sig.nl-v0, mark.nl-sig.nl-v1, mark.nl-sig.nl-v2, mark.nl-sig.nl-v3, mark.nl-sig.nl-v4, mark.nl-sig.nl-v5,
+mark.nl-sig.nl-v6, mark.nl-sig.nl-v7, mark.nl-sig.nl-v8, mark.nl-sig.nl-v9, mark.nl-sig.nl-v10 { color: inherit; }
+mark.nl-sig.nl-v0 { background: color-mix(in srgb, var(--nl-v0) var(--nl-mix), var(--card)); }
+mark.nl-sig.nl-v1 { background: color-mix(in srgb, var(--nl-v1) var(--nl-mix), var(--card)); }
+mark.nl-sig.nl-v2 { background: color-mix(in srgb, var(--nl-v2) var(--nl-mix), var(--card)); }
+mark.nl-sig.nl-v3 { background: color-mix(in srgb, var(--nl-v3) var(--nl-mix), var(--card)); }
+mark.nl-sig.nl-v4 { background: color-mix(in srgb, var(--nl-v4) var(--nl-mix), var(--card)); }
+mark.nl-sig.nl-v5 { background: color-mix(in srgb, var(--nl-v5) var(--nl-mix), var(--card)); }
+mark.nl-sig.nl-v6 { background: color-mix(in srgb, var(--nl-v6) var(--nl-mix), var(--card)); }
+mark.nl-sig.nl-v7 { background: color-mix(in srgb, var(--nl-v7) var(--nl-mix), var(--card)); }
+mark.nl-sig.nl-v8 { background: color-mix(in srgb, var(--nl-v8) var(--nl-mix), var(--card)); }
+mark.nl-sig.nl-v9 { background: color-mix(in srgb, var(--nl-v9) var(--nl-mix), var(--card)); }
+mark.nl-sig.nl-v10 { background: color-mix(in srgb, var(--nl-v10) var(--nl-mix), var(--card)); }
+.nl-legenda { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0; }
+.nl-spzin { font-size: 17px; line-height: 1.55; margin: 12px 0; }
+.nl-vrij { margin: 6px 0; font-size: 15px; }
+
+/* ---------- tikbare woorden (formuleerdokter, kommazetter, snijtafel) ---------- */
+.nl-zin { line-height: 2.6; margin: 10px 0; font-size: 16px; }
+.nl-w { font: inherit; color: var(--text); background: var(--card); border: 1.5px dashed var(--line); border-radius: 8px; padding: 6px 7px; min-height: 40px; min-width: 32px; cursor: pointer; position: relative; line-height: 1.2; }
+.nl-w:disabled { cursor: default; opacity: 1; }
+.nl-w.mis { border-color: var(--bad); border-style: solid; background: var(--bad-soft); }
+.nl-w.mark { border-color: var(--oranje); border-style: solid; background: color-mix(in srgb, var(--geel) 60%, var(--card)); font-weight: 700; }
+.nl-w.sel { border-style: solid; border-color: var(--accent); background: var(--accent-soft); }
+.nl-w.raak { border-style: solid; border-color: var(--good); background: var(--good-soft); }
+.nl-w.gemist { border-style: solid; border-color: var(--oranje); border-width: 2.5px; }
+.nl-w.teveel { border-style: solid; border-color: var(--bad); background: var(--bad-soft); }
+.nl-w.ook { border-style: solid; border-color: var(--nl-v0); background: color-mix(in srgb, var(--nl-v0) var(--nl-mix), var(--card)); }
+.nl-zin.komma .nl-w { margin-right: 5px; }
+.nl-zin.komma .nl-w i { position: absolute; z-index: 2; pointer-events: none; right: -8px; bottom: 0; font-style: normal; font-weight: 900; font-size: 28px; line-height: 1; color: var(--accent); }
+.nl-zin.komma .nl-w.komma i::after { content: ","; }
+.nl-zin.komma .nl-w.raak i { color: var(--good); }
+.nl-zin.komma .nl-w.gemist i { color: var(--oranje); }
+.nl-zin.komma .nl-w.teveel i { color: var(--bad); }
+.nl-zin.komma .nl-w.teveel i::after { content: ","; }
+
+/* ---------- d/t-trainer ---------- */
+.nl-dtzin { font-size: 18px; line-height: 1.6; margin: 12px 0 6px; }
+.nl-gat { display: inline-block; min-width: 64px; text-align: center; border-bottom: 2.5px solid var(--accent); padding: 0 4px; }
+.nl-dtopties { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+.nl-dtopties .btn { flex: 1 1 auto; min-height: 48px; font-size: 16px; padding: 8px 10px; }
+.nl-profiel { margin: 12px 0; }
+.nl-profiel > div { display: grid; grid-template-columns: 1fr 90px 40px; gap: 8px; align-items: center; font-size: 14px; margin: 6px 0; }
+.nl-profiel .bar { margin: 0; }
+.nl-profiel .bar i.zwak { background: var(--bad); }
+.nl-profiel em { font-style: normal; color: var(--muted); text-align: right; }
+.tw-w .invoer { display: flex; gap: 8px; }
+.tw-w .invoer input { flex: 1; min-width: 0; }
+
+/* ---------- snijtafel ---------- */
+.nl-schakel { display: flex; flex-wrap: wrap; gap: 4px 18px; }
+.nl-tekst { margin: 8px 0; }
+.nl-al { position: relative; padding: 10px 12px 10px 40px; margin: 8px 0; border: 1.5px solid var(--line); border-radius: 12px; background: var(--card); cursor: pointer; }
+.nl-al.vast { cursor: default; }
+.nl-al.open { border-color: var(--accent); }
+.nl-al > p { margin: 0; line-height: 1.6; }
+.nl-nr { position: absolute; left: 10px; top: 10px; width: 22px; height: 22px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-size: 13px; font-weight: 800; display: grid; place-items: center; }
+.nl-ann { margin-top: 10px; padding: 10px 12px; background: var(--accent-soft); border-radius: 10px; font-size: 15px; cursor: default; }
+.nl-ann p { margin: 6px 0; }
+.nl-kern { font-weight: 700; background: color-mix(in srgb, var(--turq) 45%, var(--card)); border-radius: 4px; }
+.nl-dof { opacity: .6; }
+.nl-sigstap .nl-zin { line-height: 2.5; font-size: 15px; }
+.nl-sigstap .nl-w { padding: 5px 5px; }
+
+/* ---------- alineapuzzel ---------- */
+.nl-puzzel { margin: 10px 0; }
+.nl-stuk { display: flex; gap: 10px; align-items: flex-start; padding: 10px; margin: 8px 0; border: 1.5px solid var(--line); border-radius: 12px; background: var(--card); }
+.nl-stuk p { margin: 0; font-size: 15px; line-height: 1.5; }
+.nl-stuk small { display: block; margin-top: 6px; color: var(--accent); font-size: 13px; }
+.nl-stuk.goed { border-color: var(--good); background: var(--good-soft); }
+.nl-stuk.fout { border-color: var(--bad); }
+.nl-pijlen { display: flex; flex-direction: column; gap: 6px; flex: none; }
+.nl-pijlen .btn { width: 42px; height: 42px; padding: 0; font-size: 14px; }
+
+/* ---------- alineabouwer ---------- */
+.nl-label { padding: 10px; margin: 8px 0; border: 1.5px solid var(--line); border-radius: 12px; background: var(--card); }
+.nl-label p { margin: 0 0 8px; font-size: 15px; }
+.nl-label.goed { border-color: var(--good); }
+.nl-label.fout { border-color: var(--bad); background: var(--bad-soft); }
+.nl-kuva-knop { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.nl-kuva-knop .btn { min-height: 42px; padding: 4px; font-weight: 800; }
+.nl-laag { border-radius: 4px; padding: 1px 2px; line-height: 1.7; }
+.nl-laag.nl-lK { background: color-mix(in srgb, var(--nl-lK) var(--nl-mix), var(--card)); }
+.nl-laag.nl-lU { background: color-mix(in srgb, var(--nl-lU) var(--nl-mix), var(--card)); }
+.nl-laag.nl-lV { background: color-mix(in srgb, var(--nl-lV) var(--nl-mix), var(--card)); }
+.nl-laag.nl-lA { background: color-mix(in srgb, var(--nl-lA) var(--nl-mix), var(--card)); }
+.nl-bouwveld { margin: 12px 0; padding-left: 10px; border-left: 4px solid var(--line); }
+.nl-bouwveld.nl-lK { border-color: var(--nl-lK); }
+.nl-bouwveld.nl-lU { border-color: var(--nl-lU); }
+.nl-bouwveld.nl-lV { border-color: var(--nl-lV); }
+.nl-bouwveld.nl-lA { border-color: var(--nl-lA); }
+.nl-bouwveld label { display: block; }
+.nl-bouwveld label small { display: block; color: var(--muted); font-size: 14px; }
+.nl-voorbeeld { padding: 10px 12px; border: 1.5px dashed var(--line); border-radius: 12px; line-height: 1.6; min-height: 48px; }
+
+/* ---------- argumentenbank en kanten ---------- */
+.nl-kant { display: inline-block; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; padding: 2px 7px; border-radius: 99px; background: color-mix(in srgb, var(--muted) 18%, var(--card)); color: var(--muted); }
+.nl-kant.kans, .kans .nl-kant { color: var(--nl-kans); background: color-mix(in srgb, var(--nl-kans) 16%, var(--card)); }
+.nl-kant.bedreiging, .bedreiging .nl-kant { color: var(--nl-bedr); background: color-mix(in srgb, var(--nl-bedr) 16%, var(--card)); }
+.nl-kant.nuance, .nuance .nl-kant { color: var(--nl-nuance); background: color-mix(in srgb, var(--nl-nuance) 16%, var(--card)); }
+.nl-arg { margin: 8px 0; border: 1.5px solid var(--line); border-left-width: 5px; border-radius: 12px; background: var(--card); }
+.nl-arg.kans { border-left-color: var(--nl-kans); }
+.nl-arg.bedreiging { border-left-color: var(--nl-bedr); }
+.nl-arg.nuance { border-left-color: var(--nl-nuance); }
+.nl-argkop { display: flex; align-items: stretch; }
+.nl-argtitel { flex: 1; text-align: left; font: inherit; color: var(--text); background: none; border: 0; padding: 10px 12px; min-height: 48px; cursor: pointer; display: flex; flex-direction: column; gap: 3px; align-items: flex-start; }
+.nl-ster { flex: none; width: 48px; font-size: 22px; background: none; border: 0; color: var(--muted); cursor: pointer; }
+.nl-ster.aan { color: var(--oranje); }
+.nl-arglijf { padding: 0 12px 10px; font-size: 15px; }
+.nl-arglijf p { margin: 6px 0; }
+div.nl-weer { background: var(--accent-soft); border-radius: 10px; padding: 8px 10px; margin-top: 8px; }
+div.nl-weer p { margin: 4px 0 0; }
+
+/* ---------- verdeler en balken ---------- */
+.nl-balk { display: flex; height: 22px; border-radius: 8px; overflow: hidden; gap: 2px; margin: 6px 0; }
+.nl-balk i { display: block; min-width: 4px; }
+.nl-b0 { background: var(--nl-v0); }
+.nl-b1 { background: var(--accent); }
+.nl-b2 { background: var(--nl-kans); }
+.nl-b3 { background: var(--nl-bedr); }
+.nl-balklegenda { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 14px; }
+.nl-balklegenda i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; }
+.nl-balans { margin: 10px 0; font-size: 14px; }
+.nl-balans small { color: var(--muted); }
+
+/* ---------- schrijfplan ---------- */
+.nl-stappen { display: flex; justify-content: space-between; gap: 4px; margin: 4px 0 8px; position: relative; }
+.nl-stappen::before { content: ""; position: absolute; left: 20px; right: 20px; top: 50%; height: 2px; background: var(--line); z-index: 0; }
+.nl-stappen button { position: relative; z-index: 1; width: 42px; height: 42px; border-radius: 50%; border: 2px solid var(--line); background: var(--card); color: var(--text); font: inherit; font-weight: 800; cursor: pointer; }
+.nl-stappen button.af { border-color: var(--good); color: var(--good); background: var(--good-soft); }
+.nl-stappen button.nu { border-color: var(--accent); background: var(--accent); color: var(--op-accent, #fff); }
+.nl-kaarten { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 10px 0; }
+.nl-kaart { text-align: left; font: inherit; color: var(--text); background: var(--card); border: 2px solid var(--line); border-radius: 14px; padding: 12px; cursor: pointer; display: flex; flex-direction: column; gap: 4px; }
+.nl-kaart span { font-size: 14px; color: var(--muted); }
+.nl-kaart.aan { border-color: var(--accent); background: var(--accent-soft); }
+.nl-gekozen { margin: 8px 0; }
+.nl-gek { display: flex; gap: 8px; align-items: flex-start; padding: 8px; margin: 6px 0; border: 1.5px solid var(--line); border-radius: 12px; background: var(--card); }
+.nl-gek > div:nth-child(2) { flex: 1; min-width: 0; }
+.nl-gek p { margin: 4px 0; font-size: 14px; }
+.nl-gek small { color: var(--muted); }
+.nl-x { width: 42px; height: 42px; padding: 0; flex: none; }
+.nl-bankitem { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; width: 100%; text-align: left; font: inherit; color: var(--text); background: var(--card); border: 1.5px solid var(--line); border-radius: 12px; padding: 10px 12px; margin: 6px 0; cursor: pointer; }
+.nl-bankitem > span:not(.nl-kant) { font-size: 14px; color: var(--muted); }
+.nl-bankitem em { font-style: normal; font-size: 13px; font-weight: 700; color: var(--accent); }
+.nl-bankitem.aan { border-color: var(--accent); background: var(--accent-soft); }
+.nl-plan { padding-left: 0; list-style: none; margin: 8px 0; counter-reset: nlp; }
+.nl-plan > li { counter-increment: nlp; border-left: 3px solid var(--accent); padding: 4px 0 6px 10px; margin: 8px 0; }
+.nl-plan ul { margin: 4px 0; padding-left: 18px; font-size: 14px; }
+.nl-plan small { color: var(--muted); font-size: 13px; }
+.nl-plankop { display: flex; justify-content: space-between; gap: 8px; }
+.nl-plankop b::before { content: counter(nlp) ". "; }
+.nl-plankop span { color: var(--muted); font-size: 13px; white-space: nowrap; }
+.nl-plankaart { border: 1.5px solid var(--line); border-radius: 14px; padding: 12px; margin: 10px 0; background: var(--card); }
+.nl-plankaart h4 { margin: 4px 0; }
+
+/* ---------- schrijfarena ---------- */
+details.nl-vak { border: 1.5px solid var(--line); border-radius: 12px; padding: 0 12px; margin: 8px 0; background: var(--card); }
+details.nl-vak > summary { cursor: pointer; padding: 12px 0; font-weight: 700; min-height: 44px; }
+details.nl-vak[open] { padding-bottom: 10px; }
+.nl-klok { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: 12px; }
+.nl-klok > div:first-child { display: flex; flex-direction: column; min-width: 0; }
+.nl-klok b { font-size: 1.6rem; font-variant-numeric: tabular-nums; }
+.nl-klok small { color: var(--muted); font-size: 13px; }
+.nl-klokknop { display: flex; gap: 6px; flex: none; }
+.nl-klokknop .btn { min-height: 44px; min-width: 48px; }
+.nl-klokbalk > i { background: var(--oranje); }
+.tw-w input.nl-titelveld { display: block; width: 100%; margin: 12px 0 6px; font-weight: 700; font-size: 17px; }
+.nl-meter { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; margin: 6px 0; }
+.nl-m1 b { font-size: 1.5rem; }
+.nl-m1 span { color: var(--muted); margin-left: 4px; }
+.nl-m2 { display: flex; gap: 12px; font-size: 14px; color: var(--muted); }
+.nl-m2 b { color: var(--text); }
+.nl-doel { position: relative; flex-basis: 100%; height: 8px; background: var(--line); border-radius: 99px; }
+.nl-doel i { display: block; height: 100%; border-radius: 99px; background: var(--accent); transition: width .25s; }
+.nl-doel i.goed { background: var(--good); }
+.nl-doel i.over { background: var(--bad); }
+.nl-doel em { position: absolute; left: 83.33%; top: -4px; bottom: -4px; width: 2px; background: var(--text); }
+textarea.nl-schrijf { width: 100%; min-height: 320px; font-size: 16px; line-height: 1.6; padding: 12px; }
+.nl-tabs { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 4px; margin: 6px 0 10px; }
+.nl-tabs button { flex: none; font: inherit; font-size: 14px; color: var(--text); background: var(--card); border: 1.5px solid var(--line); border-radius: 99px; padding: 8px 12px; min-height: 40px; cursor: pointer; }
+.nl-tabs button.aan { border-color: var(--accent); background: var(--accent-soft); font-weight: 700; }
+.nl-tabs button i { font-style: normal; display: inline-block; margin-left: 6px; min-width: 20px; padding: 0 5px; border-radius: 99px; background: var(--oranje); color: var(--card); font-size: 12px; font-weight: 800; }
+.nl-staven { display: flex; align-items: flex-end; gap: 6px; height: 130px; margin: 10px 0; padding-bottom: 34px; }
+.nl-staven > div { flex: 1; max-width: 48px; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; position: relative; }
+.nl-staven i { display: block; width: 100%; background: var(--accent); border-radius: 6px 6px 0 0; }
+.nl-staven i.kort { background: var(--oranje); }
+.nl-staven i.lang { background: var(--bad); }
+.nl-staven b { position: absolute; bottom: -18px; font-size: 12px; }
+.nl-staven span { position: absolute; bottom: -34px; font-size: 11px; color: var(--muted); }
+.nl-ritme { display: flex; align-items: flex-end; gap: 2px; height: 70px; margin: 10px 0; border-bottom: 1px solid var(--line); }
+.nl-ritme i { flex: 1; max-width: 14px; background: var(--accent); border-radius: 3px 3px 0 0; }
+.nl-ritme i.lang { background: var(--bad); }
+.nl-zinknop { display: block; width: 100%; text-align: left; font: inherit; font-size: 14px; color: var(--text); background: var(--card); border: 1.5px solid var(--line); border-radius: 10px; padding: 8px 10px; margin: 6px 0; cursor: pointer; }
+.nl-zinknop b { color: var(--bad); margin-right: 4px; }
+.nl-cat { margin: 12px 0; }
+.nl-catkop { display: flex; justify-content: space-between; gap: 8px; }
+.nl-catkop span { color: var(--muted); font-size: 13px; }
+
+/* ---------- figuren ---------- */
+.nl-skelet { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.nl-skelet h4 { margin: 0 0 6px; text-align: center; }
+.nl-skelet > div { display: flex; flex-direction: column; gap: 4px; }
+.nl-blok { display: block; text-align: center; padding: 6px 4px; border-radius: 8px; background: var(--accent-soft); font-size: 14px; font-weight: 700; }
+.nl-blok small { display: block; font-weight: 400; font-size: 12px; color: var(--muted); }
+.nl-blok.inl, .nl-blok.slot { background: color-mix(in srgb, var(--nl-v4) var(--nl-mix), var(--card)); }
+.nl-blok.tegen { background: color-mix(in srgb, var(--nl-v1) var(--nl-mix), var(--card)); }
+.nl-opbouw { display: flex; flex-direction: column; gap: 4px; }
+.nl-rij { padding: 8px 10px; border-radius: 10px; background: var(--accent-soft); }
+.nl-rij b { display: block; }
+.nl-rij b i { font-style: normal; font-weight: 400; color: var(--muted); font-size: 13px; }
+.nl-rij span { font-size: 14px; }
+.nl-rij.titel { background: none; border: 1.5px dashed var(--line); }
+.nl-rij.mid { padding: 22px 10px; }
+.nl-rij.inl, .nl-rij.slot { background: color-mix(in srgb, var(--nl-v4) var(--nl-mix), var(--card)); }
+.nl-kuva { display: flex; flex-direction: column; gap: 6px; }
+.nl-kuva > div { display: flex; gap: 10px; align-items: center; padding: 8px; border-radius: 10px; font-size: 15px; }
+.nl-kuva > div:nth-child(1) { background: color-mix(in srgb, var(--nl-lK) var(--nl-mix), var(--card)); }
+.nl-kuva > div:nth-child(2) { background: color-mix(in srgb, var(--nl-lU) var(--nl-mix), var(--card)); }
+.nl-kuva > div:nth-child(3) { background: color-mix(in srgb, var(--nl-lV) var(--nl-mix), var(--card)); }
+.nl-kuva > div:nth-child(4) { background: color-mix(in srgb, var(--nl-lA) var(--nl-mix), var(--card)); }
+.nl-kuva i { flex: none; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; font-style: normal; font-weight: 800; background: var(--card); }
+.nl-kuva b { display: block; }
+.nl-stroom { font-size: 14px; }
+.nl-vraag { text-align: center; padding: 10px; border-radius: 10px; background: var(--accent-soft); margin-bottom: 8px; }
+.nl-vraag small, .nl-takken small { display: block; color: var(--muted); font-size: 12px; }
+.nl-takken { display: flex; flex-direction: column; gap: 8px; }
+.nl-takken > div { border: 1.5px solid var(--line); border-radius: 10px; padding: 8px; display: flex; flex-direction: column; gap: 6px; }
+.nl-takken em { font-style: normal; font-weight: 800; color: var(--accent); }
+.nl-takken span { display: block; }
+
+@media (min-width: 560px) {
+  .nl-takken { flex-direction: row; }
+  .nl-takken > div { flex: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nl-doel i { transition: none; }
+}
