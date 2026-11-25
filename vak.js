@@ -6,5 +6,7 @@ TW.vak({
   kleur: "#d9480f",
   kleurDonker: "#ff9a6b",
   methode: "",
+  rekenNaam: "Zelf typen",
+  rekenIcoon: "⌨️",
   toets: "Schrijfvaardigheid: betoog of beschouwing"
 });
